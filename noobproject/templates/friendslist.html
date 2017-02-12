@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+	{% block content %}
+		<h1> List of All My Friends </h1>
+		{% for obj in object_list %}
+			{% if obj.Image %}
+				<img src = '{{obj.Image.url }}'/>
+			{% endif %}
+			
+
+	<h3><a href="{{ obj.get_absolute_url }}">{{obj.Name}}</a></h3>
+	<h3>{{obj.Birthday}}</h3>
+	</br>
+	{% endfor %}
+	{% endblock content %}
