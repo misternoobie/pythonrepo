@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+	{% block content %}
+	<div class='col-sm-4 col-sm-offset-2'>
+		<h1>Form</h1>
+		<form method = 'POST' action = '' enctype = 'multipart/form-data'>
+			{% csrf_token %}
+				<!--{{ form.as_p }}-->
+				{{ form|crispy }}								
+				<input type = 'submit' class='btn-default' value='Update'/>
+		</form>
+	</div>
+	{% endblock content %}
